@@ -1,0 +1,25 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+<p v-once>{{ titulo }}</p>
+<p>{{ saudacao() }}</p>
+<a v-bind:href="link"> Google</a> <!--o v-bind é responsável por resolver valores dentro de propriedades específicas dentro de um html-->
+<!--A diretiva v-once faz com que o atributo seja resolvido uma única vez. Por exemplo, o método saudação altera o valor dentro de titulo, mas pelo fato de ter utilizado a diretiva v-once uma vez, o valor original de titulo é lido na linha superior e não é mais resolvido após a chamada de método-->
+</div>
+
+<script> 
+    new Vue({
+        el:'#app',
+        data: {
+            titulo: 'Usando VueJS 2!',
+            link: 'http://google.com.br'
+        },
+        methods:{
+            saudacao: function(){
+                this.titulo="Bom dia!!!"
+                return this.titulo
+            }
+        }
+    })
+</script>
+  

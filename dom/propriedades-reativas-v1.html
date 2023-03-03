@@ -1,0 +1,20 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+<p>{{ titulo }}</p>
+<input type="text" v-model="titulo">
+<!--Foi feito um bind que afeta tanto a vista do HTML quando aos atributos da instancia do Vue. Maneira
+mais extensa (Two Way Data Binding) :
+<input type="text" v-bind:value="titulo"
+    v-on:input="titulo=$event.target.value">-->
+</div>
+
+<script> 
+    new Vue({
+        el:'#app',
+        data: {
+            titulo: 'Usando VueJS 2!'
+        }
+    })
+</script>
+  
