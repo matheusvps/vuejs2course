@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<div id="app">
+    <div v-if="logado">
+        <p> Usuario logado : {{ nome }} </p>
+        <p> Perfil : Admin</p>
+    </div>
+    <!-- Esses condicionais de fato REMOVEM os elementos da página, e não removem. -->
+        <p v-else-if="anonimo"> Navegando como anonimo </p>
+        <p v-else> Nenhum usuario logado </p>
+        <button @click="logado = !logado">
+        {{ logado ? 'Sair' : 'Entrar' }} </button>
+        <input type="checkbox" v-model="anonimo">
+    
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            nome: 'Hardcoded',
+            logado: false,
+            anonimo: true,
+        }
+    })
+</script>
