@@ -1,0 +1,51 @@
+<h1> Projeto</h1>
+<div id="expand">
+    <ul class="tree">
+        <li>  
+            <span atrib1>Backend</span>
+            <ul>
+                <li class="expansivel">
+                    <span atrib1>app</span>
+                    <ul>
+                        <li>produto.js</li>
+                        <li>usuario.js</li>
+                        <li>venda.js</li>
+                    </ul>
+                </li>
+                <li>
+                    <span atrib1>config</span>
+                    <ul>
+                        <li>banco.js</li>
+                        <li>rotas.js</li>
+                        <li>venda.js</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <span atrib1>Frontend</span>
+            <ul>
+                <li>
+                    public
+                    <ul>
+                        <li>app.css</li>
+                        <li>app.js</li>
+                        <li>index.html</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<script>
+    document.querySelectorAll('[atrib1]').forEach(folder =>{
+        folder.onclick=function(e){
+            const ul=folder.nextElementSibling
+            const d =ul.style.display
+            ul.style.display = d === 'none' ? 'block' : 'none'
+        }
+    })
+</script>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
